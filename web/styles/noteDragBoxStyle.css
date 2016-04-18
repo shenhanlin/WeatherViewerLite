@@ -1,0 +1,135 @@
+/* 
+    Created on : Oct 22, 2015, 9:58:10 AM
+    Author     : hanlin shen
+*****************************************************************************************************
+        * This part of code is picked from website linked blow
+        * http://www.zztuku.com/JS/Tables/20121123_4272.html
+        *This part of code is for making a div drgable
+*****************************************************************************************************
+*/
+#drag{
+    position:absolute;
+    top:100px;
+    left:100px;
+    width:500px;
+    height:160px;
+    background:#cccccc;
+    border:1px solid #444;
+    border-radius:5px;
+    z-index:90;
+}
+#drag .title{
+    position:relative;
+    height:27px;
+    margin:5px;
+}
+#drag .title h2{font-size:14px;height:27px;line-height:24px;border-bottom:1px solid #A1B4B0;}
+#drag .title div{position:absolute;height:19px;top:2px;right:0;}
+#drag .title a,a.open{float:left;width:21px;height:19px;display:block;margin-left:5px;background:url(/jscss/demoimg/201205/tool.png) no-repeat;}
+a.open{position:absolute;top:10px;left:50%;margin-left:-10px;background-position:0 0;}
+a.open:hover{background-position:0 -29px;}
+#drag .title a.min{background-position:-29px 0;}
+#drag .title a.min:hover{background-position:-29px -29px;}
+#drag .title a.max{background-position:-60px 0;}
+#drag .title a.max:hover{background-position:-60px -29px;}
+#drag .title a.revert{background-position:-149px 0;display:none;}
+#drag .title a.revert:hover{background-position:-149px -29px;}
+#drag .title a.close{background-position:-89px 0;}
+#drag .title a.close:hover{background-position:-89px -29px;}
+#drag .content{overflow:auto;margin:0 5px;}
+#drag .resizeBR{position:absolute;width:14px;height:14px;right:0;bottom:0;overflow:hidden;cursor:nw-resize;background:url(/jscss/demoimg/201205/resize.png) no-repeat;}
+#drag .resizeL,#drag .resizeT,#drag .resizeR,#drag .resizeB,#drag .resizeLT,#drag .resizeTR,#drag .resizeLB{position:absolute;background:#000;overflow:hidden;opacity:0;filter:alpha(opacity=0);}
+#drag .resizeL,#drag .resizeR{top:0;width:5px;height:100%;cursor:w-resize;}
+#drag .resizeR{right:0;}
+#drag .resizeT,#drag .resizeB{width:100%;height:5px;cursor:n-resize;}
+#drag .resizeT{top:0;}
+#drag .resizeB{bottom:0;}
+#drag .resizeLT,#drag .resizeTR,#drag .resizeLB{width:8px;height:8px;background:#FF0;}
+#drag .resizeLT{top:0;left:0;cursor:nw-resize;}
+#drag .resizeTR{top:0;right:0;cursor:ne-resize;}
+#drag .resizeLB{left:0;bottom:0;cursor:ne-resize;}
+
+
+
+#mapDrag{
+    position:absolute;
+    top:100px;
+    left:100px;
+    min-width:500px;
+    min-height:415px;   
+    width:500px;
+    height:430px;
+    background:#cccccc;
+    z-index:50;
+}
+#mapDrag .title{
+    position:relative;
+    height:27px;
+    margin:5px;
+}
+#mapDrag .title h2{font-size:14px;height:27px;line-height:24px;border-bottom:1px solid #A1B4B0;}
+#mapDrag .title div{position:absolute;height:19px;top:2px;right:0;}
+#mapDrag .title a,a.open{float:left;width:21px;height:19px;display:block;margin-left:5px;background:url(/jscss/demoimg/201205/tool.png) no-repeat;}
+a.open{position:absolute;top:10px;left:50%;margin-left:-10px;background-position:0 0;}
+a.open:hover{background-position:0 -29px;}
+#mapDrag .title a.min{background-position:-29px 0;}
+#mapDrag .title a.min:hover{background-position:-29px -29px;}
+#mapDrag .title a.max{background-position:-60px 0;}
+#mapDrag .title a.max:hover{background-position:-60px -29px;}
+#mapDrag .title a.revert{background-position:-149px 0;display:none;}
+#mapDrag .title a.revert:hover{background-position:-149px -29px;}
+#mapDrag .title a.close{background-position:-89px 0;}
+#mapDrag .title a.close:hover{background-position:-89px -29px;}
+#mapDrag .content{overflow:auto;margin:0 5px;}
+#mapDrag .mapResizeBR{position:absolute;width:14px;height:14px;right:0;bottom:0;overflow:hidden;cursor:nw-resize;background:url(/jscss/demoimg/201205/resize.png) no-repeat;}
+#mapDrag .mapResizeL,#mapDrag .mapResizeT,#mapDrag .mapResizeR,#mapDrag .mapResizeB,#mapDrag .mapResizeLT,#mapDrag .mapResizeTR,#mapDrag .mapResizeLB{position:absolute;background:#000;overflow:hidden;opacity:0;filter:alpha(opacity=0);}
+#mapDrag .mapResizeL,#drag .mapResizeR{top:0;width:5px;height:100%;cursor:w-resize;}
+#mapDrag .mapResizeR{right:0;}
+#mapDrag .mapResizeT,#mapDrag .mapResizeB{width:100%;height:5px;cursor:n-resize;}
+#mapDrag .mapResizeT{top:0;}
+#mapDrag .mapResizeB{bottom:0;}
+#mapDrag .mapResizeLT,#mapDrag .mapResizeTR,#mapDrag .mapResizeLB{width:8px;height:8px;background:#FF0;}
+#mapDrag .mapResizeLT{top:0;left:0;cursor:nw-resize;}
+#mapDrag .mapResizeTR{top:0;right:0;cursor:ne-resize;}
+#mapDrag .mapResizeLB{left:0;bottom:0;cursor:ne-resize;}
+
+
+#graphDrag{
+    position:absolute;
+    top:100px;
+    left:100px;
+    min-width:500px;
+    min-height:415px;
+    background:#cccccc;
+    z-index:50;
+}
+#graphDrag .title{
+    position:relative;
+    height:27px;
+    margin:5px;
+}
+#graphDrag .title h2{font-size:14px;height:27px;line-height:24px;border-bottom:1px solid #A1B4B0;}
+#graphDrag .title div{position:absolute;height:19px;top:2px;right:0;}
+#graphDrag .title a,a.open{float:left;width:21px;height:19px;display:block;margin-left:5px;background:url(/jscss/demoimg/201205/tool.png) no-repeat;}
+a.open{position:absolute;top:10px;left:50%;margin-left:-10px;background-position:0 0;}
+a.open:hover{background-position:0 -29px;}
+#graphDrag .title a.min{background-position:-29px 0;}
+#graphDrag .title a.min:hover{background-position:-29px -29px;}
+#graphDrag .title a.max{background-position:-60px 0;}
+#graphDrag .title a.max:hover{background-position:-60px -29px;}
+#graphDrag .title a.revert{background-position:-149px 0;display:none;}
+#graphDrag .title a.revert:hover{background-position:-149px -29px;}
+#graphDrag .title a.close{background-position:-89px 0;}
+#graphDrag .title a.close:hover{background-position:-89px -29px;}
+#graphDrag .content{overflow:auto;margin:0 5px;}
+#graphDrag .graphResizeBR{position:absolute;width:14px;height:14px;right:0;bottom:0;overflow:hidden;cursor:nw-resize;background:url(/jscss/demoimg/201205/resize.png) no-repeat;}
+#graphDrag .graphResizeL,#graphDrag .graphResizeT,#graphDrag .graphResizeR,#graphDrag .graphResizeB,#graphDrag .graphResizeLT,#graphDrag .graphResizeTR,#graphDrag .graphResizeLB{position:absolute;background:#000;overflow:hidden;opacity:0;filter:alpha(opacity=0);}
+#graphDrag .graphResizeL,#graphDrag .graphResizeR{top:0;width:5px;height:100%;cursor:w-resize;}
+#graphDrag .graphResizeR{right:0;}
+#graphDrag .graphResizeT,#graphDrag .graphResizeB{width:100%;height:5px;cursor:n-resize;}
+#graphDrag .graphResizeT{top:0;}
+#graphDrag .graphResizeB{bottom:0;}
+#graphDrag .graphResizeLT,#graphDrag .graphResizeTR,#graphDrag .graphResizeLB{width:8px;height:8px;background:#FF0;}
+#graphDrag .graphResizeLT{top:0;left:0;cursor:nw-resize;}
+#graphDrag .graphResizeTR{top:0;right:0;cursor:ne-resize;}
+#graphDrag .graphResizeLB{left:0;bottom:0;cursor:ne-resize;}

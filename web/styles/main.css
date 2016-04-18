@@ -1,0 +1,715 @@
+/* 
+    Created on : Oct 21, 2015, 1:02:11 PM
+    Author     : hanlin shen
+*/
+
+body
+{
+    background: #cccccc;
+}
+
+#menuButton{
+    position:fixed;
+    top: 40%;  
+}
+
+#revertAll{
+    float:right;
+    margin-top: 68px;
+    background-color: #5a0000;
+    color: white;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#showNote{
+    position:fixed;
+    top: 90%;
+    display: none;
+}
+
+#showNoteImg{
+    width: 100px;
+    height: 90px;
+}
+
+#caption{
+    width: 85%;
+    height: 94px;
+    min-width: 1530px;
+    margin: auto;
+    margin-top: 20px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right:  1px solid black;
+    text-align: center;
+
+}
+
+#captionImg{
+
+    width: 100px;
+    height: 90px;
+}
+
+#captionText{
+    color: #5a0000;
+    font-size: 50px;
+}
+#wrapper{
+    min-height: 1000px;
+    min-width: 1530px;
+    width: 85%;
+    margin: auto; 
+    border: 1px solid black;
+    background-color: #cccccc;
+}
+
+#leftHalf{
+    min-height: 700px;
+    min-width: 710px;
+    width: 60%;
+    float: left;
+    margin-left:2%;
+    margin-top: 3%;
+
+}
+
+#leftTopHalf{
+    min-height: 450px;
+    min-width: 250px;
+    border: 1px solid black;
+}
+
+#videoControl{
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    width: 700px;
+    height: 30px;
+    margin: auto;
+    text-align: center;
+
+}
+#leftBottomHalf{
+    height: 140px;
+    min-width: 250px;
+    border: 1px solid black;
+}
+
+#rightHalf{
+    min-height: 500px;
+    min-width: 430px;
+    width: 30%;
+    //border: 2px solid black;
+    float: left;
+    margin-left:2%;
+    margin-right:2%;
+    margin-top: 3%;
+}
+.graphTitleLable{
+    border-top:1px solid black;
+    border-left:1px solid black;
+    border-right:1px solid black;
+    height: 30px;   
+    font-size: 25px;
+    text-align: center;
+}
+.mapTitleLable{
+    border-top:1px solid black;
+    border-left:1px solid black;
+    border-right:1px solid black;
+    height: 30px;   
+    font-size: 25px;
+    text-align: center;
+}
+
+#videoTitleLabel{
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    width: 700px;
+    height: 30px;   
+    font-size: 25px;
+    text-align: center;
+    margin: auto;
+    margin-top: 2px;
+    text-align: center;
+}
+
+#mapControl{
+    border-top:1px solid black;
+    border-left:1px solid black;
+    border-right:1px solid black;
+    height: 30px;    
+}
+
+#popOutImg{
+    height: 30px;
+    width: 35px;
+    margin-left: 3px;
+}
+
+.dropDownListSelector{
+    float: right;
+    height: 25px;
+    margin-top: 1px;
+    width: 300px;
+}
+
+#m_map{
+    min-width:480px;
+    min-height:350px;
+    //min-height: 400px;
+    border: 1px solid black;
+    color: white;
+}
+
+#graphControl{
+    height: 30px;
+    border-top:1px solid black;
+    border-left:1px solid black;
+    border-right:1px solid black;
+}
+
+#graphControl span{
+    text-align: center;
+    font-size: 26px;
+    vertical-align: top;
+}
+#graph{
+    min-height: 350px;
+    border: 1px solid black;
+    color: white;
+}
+
+#video{
+    height: 500px;
+    width: 700px;
+    border: 1px solid black;
+    margin: auto;
+    color: white;
+    background: black;
+}
+#control{
+    height: 160px;
+    width: 700px;
+    border: 1px solid black;
+    margin: auto;
+    color: white;
+}
+
+#controlTopHalf{
+    height: 100px;
+    width: 700px;
+    margin: auto;
+    float: left;
+}
+
+#cameraTrackBarDiv{
+    width: 98%;
+    padding-left: 5px;
+    height:25px;
+}
+
+#cameraSpeedBarDiv{
+    width: 60px;
+    color:black;
+    display: inline;
+}
+
+#speedTrackBar{
+    width: 150px;
+}
+
+#cameraControlButtonDiv{
+    padding-left: 5px;
+    padding-top: 5px;
+    text-align: center;
+}
+
+/*.videoButton{
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    background: #cccccc; for compatibility with older browsers
+    background-image: linear-gradient(#333333,#666666);
+    border:1px solid gray;
+}
+
+.videoButton:after{
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(100% - 4px);
+    height: 50%;
+    background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.1));
+}
+.videoButton:hover{
+    background: linear-gradient(#073,#0fa);
+}
+.videoButton:active{
+    border:1px solid black;
+}*/
+
+.rectangle {
+    width: 5px;
+    height: 20px;
+    background: #ffffff;
+    float: left;
+    margin-left: 14px;
+    margin-top: 3px;
+}
+
+.triangleRight {
+    width: 0; 
+    height: 0; 
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 18px solid #ffffff;
+    margin: auto;
+    margin-top: 3px;
+    margin-left: 2px;
+    //margin-left: 18px;
+    float: left;
+}
+.triangleLeft {
+    width: 0; 
+    height: 0; 
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 18px solid #ffffff; 
+    margin: auto;
+    margin-top: 3px;
+    margin-left: 5px;
+    //margin-left: 18px;
+    float: left;
+}
+
+
+#controlBottomHalf{
+    height: 96px;
+    width: 700px;
+    margin: auto;
+    float: left;
+    text-align: center;
+}
+.previousDayBorderHelperDiv{
+    border-radius: 100%;
+    background-color: #cccccc;
+    position: absolute;
+    width: 30px;
+    height: 120%;
+    top: -3px;
+    right: -23px;
+}
+.nextDayBorderHelperDiv{
+    border-radius: 100%;
+    background-color: #cccccc;
+    position: absolute;
+    width: 30px;
+    height: 120%;
+    top: -3px;
+    left: -23px;
+}
+#foot{
+    height: 500px;
+    width: 500px;
+    //border: 2px solid #8AC007;
+}
+
+.defaultButton
+{
+    background-image: -webkit-linear-gradient(top, #5a0000, #8c0e0e);
+    background-image: -moz-linear-gradient(top, #5a0000, #8c0e0e);
+    background-image: -ms-linear-gradient(top, #5a0000, #8c0e0e);
+    background-image: -o-linear-gradient(top, #5a0000, #8c0e0e);
+    background-image: linear-gradient(to bottom, #5a0000, #8c0e0e);
+    color: #fff;
+    font-family: Sans-serif;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    border:0px;
+    transition: all 0.3s ease 0s;
+    float: left;
+}
+
+.defaultButton:hover {
+    background-image: -webkit-linear-gradient(top, #fc3c3c, #5a0000);
+    background-image: -moz-linear-gradient(top, #fc3c3c, #5a0000);
+    background-image: -ms-linear-gradient(top, #fc3c3c, #5a0000);
+    background-image: -o-linear-gradient(top, #fc3c3c, #5a0000);
+    background-image: linear-gradient(to bottom, #fc3c3c, #5a0000);
+}
+
+
+#dateDiv{
+    width:350px;
+    height: 100%;
+    margin: auto;
+    float: left;
+}
+#dateDivNextDayAndPreviousDay{
+    height: 47px;
+    width: 99.9%;
+}
+
+#dateDivDateData{   
+    width: 690px;
+    height: 50px;
+    font-size: 20px;
+    margin:auto;
+}
+
+#startDateDiv{
+    color: black;
+    width: 25%;
+    font-size: 15px;
+    float: left;
+    border-right:1px dotted black;
+}
+
+#currentDateDiv{
+    width: 49%;
+    float: left;
+    color: black;
+}
+
+#endDateDiv{
+    width: 25%;
+    font-size: 15px;
+    float: left;
+    border-left:1px dotted black;
+    color: black;
+}
+
+
+
+
+
+
+#dateDivPickData{
+    height: 47px;
+    width: 99.9%;
+    margin-top: 3px;
+}
+
+#bookMarkDiv{
+    width:348px;
+    height: 99.9%;
+    float: left;
+    margin: auto;
+}
+
+#bookMarkOptionDiv{
+    height: 20%;
+    width: 99.9%;
+}
+
+#bookMarkSelectionDiv{
+    height: 78%;
+    width: 99.9%;
+}
+
+#bookMarkSelectList{
+    width: 99.5%;
+    height: 99.9%;
+}
+
+#noteDiv{
+}
+#noteDivTextArea{
+    width: 80%; 
+    max-width: 80%; 
+    min-height: 68px;
+    margin-left: 5px;
+    float: left;
+    resize: none;
+}
+#noteDivButtonArea{
+    margin-left: 10px;
+    min-width: 18%;
+}
+#noteDivButtonArea ul{
+    list-style-type:none;
+    vertical-align: bottom;
+}
+.noteDivButton{
+    height: 20px;
+    width: 130px;
+}
+
+#test
+{
+    border:1px solid white;
+    max-width: 210px;
+    min-height: 60px;
+}
+
+.lightButton{
+    height: 20px;
+    width: 20px;
+    background-color: lightskyblue;
+    position:fixed;
+    top: 10%;  
+}
+
+
+
+/*
+* CSS for the input range is from link list blow
+*http://danielstern.ca/range.css/#/
+*/
+
+input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    margin: 5.1px 0;
+}
+input[type=range]:focus {
+    outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 16.8px;
+    cursor: pointer;
+    box-shadow: 0.9px 0.9px 1.7px #002200, 0px 0px 0.9px #003c00;
+    background: #ffffff;
+    border-radius: 1px;
+    border: 6.9px solid #909698;
+}
+input[type=range]::-webkit-slider-thumb {
+    box-shadow: 1.4px 1.4px 3.2px #89e48a, 0px 0px 1.4px #9ee99f;
+    border: 2.5px solid #00b4ff;
+    height: 27px;
+    width: 4px;
+    border-radius: 12px;
+    background: #6e6f69;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -12px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #ffffff;
+}
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 16.8px;
+    cursor: pointer;
+    box-shadow: 0.9px 0.9px 1.7px #002200, 0px 0px 0.9px #003c00;
+    background: #ffffff;
+    border-radius: 1px;
+    border: 6.9px solid #909698;
+}
+input[type=range]::-moz-range-thumb {
+    box-shadow: 1.4px 1.4px 3.2px #89e48a, 0px 0px 1.4px #9ee99f;
+    border: 2.5px solid #00b4ff;
+    height: 27px;
+    width: 4px;
+    border-radius: 12px;
+    background: #6e6f69;
+    cursor: pointer;
+}
+input[type=range]::-ms-track {
+    width: 100%;
+    height: 16.8px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+    background: #a3a3a3;
+    border: 6.9px solid #909698;
+    border-radius: 2px;
+    box-shadow: 0.9px 0.9px 1.7px #002200, 0px 0px 0.9px #003c00;
+}
+input[type=range]::-ms-fill-upper {
+    background: #ffffff;
+    border: 6.9px solid #909698;
+    border-radius: 2px;
+    box-shadow: 0.9px 0.9px 1.7px #002200, 0px 0px 0.9px #003c00;
+}
+input[type=range]::-ms-thumb {
+    box-shadow: 1.4px 1.4px 3.2px #89e48a, 0px 0px 1.4px #9ee99f;
+    border: 2.5px solid #00b4ff;
+    height: 27px;
+    width: 4px;
+    border-radius: 12px;
+    background: #6e6f69;
+    cursor: pointer;
+    height: 16.8px;
+}
+input[type=range]:focus::-ms-fill-lower {
+    background: #ffffff;
+}
+input[type=range]:focus::-ms-fill-upper {
+    background: #ffffff;
+}
+
+
+//----------------------------------------------------------------------------------------------
+
+.videoDiv{
+    border: white solid 1px;
+    border-radius: 10px;
+    padding: 4%;
+
+    color: white;
+    background-color: rgba(0, 0, 0, .6);
+
+    width: 500px;
+    height: 380px;
+}
+
+.movieSelector{
+    text-align: right;
+}
+
+video {
+    padding-top: 5px;
+    width: 100%;
+    height: 99%;
+    border-radius: 3px;
+}
+
+
+.dateLabel{
+    text-align: left;
+    width: 100%;
+    font-size: 1.5em;
+}
+
+#dateSelector{
+    margin-top:30px;
+    margin-left: 140px;
+}
+
+.videoButton{
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 30px;
+    font-size: 1.5em;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.videoButton{
+    background: #5a0000;
+    background-image: -webkit-linear-gradient(top, #5a0000, #8c0e0e);
+    background-image: -moz-linear-gradient(top, #5a0000, #8c0e0e);
+    background-image: -ms-linear-gradient(top, #5a0000, #8c0e0e);
+    background-image: -o-linear-gradient(top, #5a0000, #8c0e0e);
+    background-image: linear-gradient(to bottom, #5a0000, #8c0e0e);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Arial;
+    color: #ffffff;
+    padding: 5px 20px 5px 20px;
+    border:2px solid #5A0000;
+
+}
+
+.videoButton:hover {
+    //background: #fc3c3c;
+    background-image: -webkit-linear-gradient(top, #fc3c3c, #5a0000);
+    background-image: -moz-linear-gradient(top, #fc3c3c, #5a0000);
+    background-image: -ms-linear-gradient(top, #fc3c3c, #5a0000);
+    background-image: -o-linear-gradient(top, #fc3c3c, #5a0000);
+    background-image: linear-gradient(to bottom, #fc3c3c, #5a0000);
+}
+
+#pickDateDiv{
+    width: 690px;
+    height: 600px;
+    z-index:95;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #67b5d1;
+    display: none;
+
+}
+
+#pickDateDivMask{
+    top:0;
+    left:0;
+    z-index:94;
+    overflow:hidden;
+    position:fixed;
+    display: none;
+    background-color:#000;
+    width:100%;
+    height:100%;
+    opacity:.7;
+    -webkit-transition:opacity .3s;
+    transition:opacity .3s;
+}
+
+#menuFileOpen{
+    width: 500px;
+    height: 200px;
+    z-index:112;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #67b5d1;
+    display: none;
+}
+
+#menuFileSave{
+    width: 500px;
+    height: 200px;
+    z-index:112;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #67b5d1;
+    display: none;
+}
+
+#menuMask{
+    top:0;
+    left:0;
+    z-index:111;
+    overflow:hidden;
+    position:fixed;
+    display: none;
+    background-color:#000;
+    width:100%;
+    height:100%;
+    opacity:.7;
+    -webkit-transition:opacity .3s;
+    transition:opacity .3s;
+}
+
+#localVideoSelectInput{
+    margin-left: 140px;
+}
+#message{
+    margin-left: 140px;
+}
+
+#downloadButton{
+    border: 1px solid black;
+    background: white;
+    text-decoration:none;
+    color: black;
+}
+
+#downloadButtonDiv{
+    padding-left: 180px;
+    padding-top: 100px;
+}
+
+#graphSittingButton{
+    border: 1px solid black;
+}

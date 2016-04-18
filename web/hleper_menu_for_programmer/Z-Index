@@ -1,0 +1,15 @@
+Hanlin Shen
+11/17/2015
+
+name                     Z-index
+.picker                  10000
+#pickDateDiv             95
+#pickDateDivMask         94
+#menuFileOpen            112
+#menuFileOpenMask        111
+.c-menu                  110
+.c-mask                  100
+#carbonads               1000
+#drag                    90
+#mapDrag                 50
+#graphDrag               50

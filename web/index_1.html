@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--style sheet-->
+        <link rel="stylesheet" type="text/css" href="/WeatherViewerLite-2/styles/menuStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="/WeatherViewerLite-2/styles/noteDragBoxStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="/WeatherViewerLite-2/styles/secondOrderMenu.css"/>
+        <link rel="stylesheet" type="text/css" href="/WeatherViewerLite-2/styles/main.css"/>
+
+        <!-- Pickadate -->
+        <link rel="stylesheet" href="/WeatherViewerLite-2/styles/default.css" id="theme_base">
+        <link rel="stylesheet" href="/WeatherViewerLite-2/styles/default.date.css" id="theme_date">
+
+        <!--java Script-->
+        <script type="text/javascript" src="/WeatherViewerLite-2/javaScript/noteDragBoxJavaScript.js"></script>
+        <script src="//cdn.jsdelivr.net/youtube-google-analytics/8.0.2/lunametrics-youtube.gtm.min.js"></script>
+        <script type="text/javascript" src="/WeatherViewerLite-2/javaScript/menuItemFunction.js"></script>
+
+        <!-- Highcharts -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="http://code.highcharts.com/highcharts.js"></script>
+
+        <!-- Pickadate -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/mootools/1.2.4/mootools-yui-compressed.js"></script>
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="/WeatherViewerLite-2/javaScript/picker.js"></script>
+        <script type="text/javascript" src="/WeatherViewerLite-2/javaScript/picker.date.js"></script>
+        <script type="text/javascript" src="/WeatherViewerLite-2/javaScript/picker.time.js"></script>
+
+        <!-- Weather Viewer Lite video, map and charts -->
+        <script type="text/javascript" src="/WeatherViewerLite-2/javaScript/dateTime.js"></script>
+        <script type="text/javascript" src="/WeatherViewerLite-2/javaScript/charts.js"></script>
+        <script type="text/javascript" src="/WeatherViewerLite-2/javaScript/videoControls.js"></script>
+        <script type="text/javascript" src="/WeatherViewerLite-2/javaScript/parseCSV.js"></script>
+        <script type="text/javascript" src="/WeatherViewerLite-2/javaScript/init.js"></script>
+        <script type="text/javascript" src="/WeatherViewerLite-2/javaScript/secondOrderMenu.js"></script>
+        <!--script type="text/javascript">
+            function loadFun() 
+            {
+                for (var i = 0; i < arrays.length; i++) { 
+                    document.getElementById(arrays[i]).parentNode.style.backgroundColor = "RGB(216,216,216)"; 
+                    document.getElementById(arrays[i]).style.display = "none"; 
+                }
+            }
+            window.addEventListener("load",loadFun(),false);
+        </script-->
+    </head>
+    <body>
+
+
+
+        <!-- The png is from http://uxrepo.com/icon/notes-by-dr-slash-->
+        <div id="showNote" onclick="showNoteDiv()"><img id ="showNoteImg" src="/WeatherViewerLite-2/imge/notes.png"/></div>
+
+        <div id = "menuButton">
+            <div id="c-button--slide-left" class="c-button">
+            </div>
+        </div>
+
+        <div id="caption">
+            <img id ="captionImg" src="/WeatherViewerLite-2/imge/buHusky.png"/>
+            <span id="captionText">BU Weather Viewer</span>
+            <em id="captionText" style="font-size: 30px;">-Web Version</em>
+            <div id="revertAll" type="button" onclick="revertALL()">Resize All Windows</div>
+        </div>
+
+        <div id="wrapper">
+
+            <div id = "leftHalf">
+                <div id="leftTopHalf">
+                    <div id="videoTitleLabel">
+                        Weather Camera Window
+                    </div>
+                    <div id ="videoControl">
+                        <a href="/WeatherViewerLite-2/cameraPage.html" target="_blank">
+                            <img id ="popOutImg" style="float: left;" src="/WeatherViewerLite-2/imge/box_expand.png"/>
+                        </a>
+                        <select id="cameraSourceSelector" class="dropDownListSelector"  onchange="updateVid()">
+                        </select>
+
+                    </div>
+                    <div id = "video" class="mainTableTD">
+                        <video controls="controls" id="camera" oncontextmenu="return false;" src="" preload="auto">
+                            Hmmm, your browser, supports video, does not!
+                        </video>
+                    </div>
+                    <div id = "control">
+                        <!--div id = "cameraTrackBarDiv">
+                            <input id="cameraTrackBar" type="range" min="0" max="98">
+                        </div-->
+                        <div id="controlTopHalf">
+
+
+
+                            <div id="cameraControlButtonDiv">
+                                <!--div id="stepBackwardsButton" class="videoButton" style="width: 40px; height: 25px;" onclick="stepBackward()">   
+                                    <div class="triangleLeft"></div>
+                                    <div class="rectangle" style="margin-left: 1px;"></div>
+                                </div>
+                                <div id="playPauseButton" class="videoButton" style="width: 40px; height: 25px;" onclick="playPause()"> 
+                                    <div id="playButton">
+                                        <div class="triangleRight" style=" margin-left: 14px;" ></div>
+                                    </div>
+                                    <div id="pauseButton" style="visibility: hidden;">
+                                        <div class="rectangle" style="margin-left: 14px; background: #ff6666;"></div>
+                                        <div class="rectangle" style="margin-left: 1px; background: #ff6666;"></div>
+                                    </div>
+                                </div>
+                                <div id="stepForwardButton" class="videoButton" style="width: 40px; height: 25px;" onclick="stepForward()"> 
+                                    <div class="rectangle"></div>
+                                    <div class="triangleRight" ></div>
+                                                           
+                                </div-->
+
+                                <div id="dateDivDateData">
+                                    <div id="startDateDiv">
+                                        <!--Date Start
+                                        <br>
+                                        2015/12/12 00:00 AM-->
+                                    </div>
+                                    <div id="currentDateDiv">
+                                        <span id="year1"></span>/<span id="month1"></span>/<span id="day1"></span>&nbsp<span id="hours1"></span>:<span id="min1"></span>:<span id="second1"></span>AM&nbsp EST
+                                        <br>
+                                        <span id="year2"></span>/<span id="month2"></span>/<span id="day2"></span>&nbsp<span id="hours2"></span>:<span id="min2"></span>:<span id="second2"></span>AM&nbsp UTC
+                                    </div>
+                                    <div id="endDateDiv">
+                                        <!--Date End
+                                        <br>
+                                        2015/12/12 00:00 AM-->
+                                    </div>
+                                </div>
+
+                                <div id="cameraSpeedBarDiv">
+                                    <!--input id="speedTrackBar" type="range" min="-3" max="3"/-->
+                                    Speed: x<span id="speedLabel"></span>
+                                    <input id="speedUp" type="button" onclick="speedUp()" value="+"/>
+                                    <input id="speedDown" type="button" onclick="speedDown()" value="-"/>
+                                </div>
+                            </div>
+
+
+                        </div><!--End of controlTopHalf-->
+
+                        <!--div id = "dateDiv">
+                            <div id="dateDivNextDayAndPreviousDay">
+                                <div class="videoButton" style="  width: 35%; height: 70%;line-height: 34px; font-size: 15px; " onclick="addDay(-1)">Previous Day</div>
+                                <div class="videoButton" style=" width: 35%; height: 70%;line-height: 34px; font-size: 15px; " onclick="addDay(1)">Next Day</div>
+                            </div>                                
+                            <div id="dateDivPickData">
+                                <div  class="videoButton" style="  width: 35%; height: 70%;line-height: 34px; font-size: 15px;" onclick="">Most Recent Data</div>
+                                <div  class="videoButton" style="  width: 35%; height: 70%;line-height: 34px; font-size: 15px;" onclick="">Pick A Day</div>
+                            </div>
+                        </div>
+                        <div id="bookMarkDiv">
+                            <div id="bookMarkOptionDiv" >
+                                <div class="defaultButton" style=" border-bottom: 2px solid black; width: 80%; height: 99%;" onclick="">Choose A BookMark</div>
+                                <div class="defaultButton" style=" border-bottom: 2px solid black; width: 10%; height: 99%;" onclick="">&#128269</div>
+                                <div class="defaultButton" style=" border-bottom: 2px solid black; width: 10%; height: 99%; font-size: 15px; font-weight: bold; " onclick="">+</div>
+                            </div>
+                                                           
+                            <div id="bookMarkSelectionDiv" >
+                                <select id="bookMarkSelectList" name="cars" multiple>
+                                    <option value="">BookMark1</option>
+                                    <option value="">BookMark2</option>
+                                    <option value="">BookMark3</option>
+                                    <option value="">BookMark4</option>
+                                    <option value="">BookMark5</option>
+                                    <option value="">BookMark6</option>
+                                    <option value="">BookMark7</option>
+                                </select>
+                            </div>
+                         
+                    </div-->
+                        <div id="controlBottomHalf">
+
+                            <div class="videoButton" style="width: 135px; height: 30px;line-height: 17px;font-size: 15px; border-top-right-radius: 0px; border-bottom-right-radius: 0px;" onclick="addDay(-1)">Previous Day <div class = "previousDayBorderHelperDiv"></div></div>
+                            <div  class="videoButton" style="width: 120px; height: 30px;line-height: 17px;font-size: 15px; z-index: 50;" onclick="showDatePickDiv()">Pick A Day</div>
+                            <div class="videoButton" style="width: 135px; height: 30px;line-height: 17px;font-size: 15px;border-bottom-left-radius: 0px; border-top-left-radius: 0px;" onclick="addDay(1)"><div class = "nextDayBorderHelperDiv"></div>Next Day</div>                       
+                        </div><!--End of controlBottomHalf-->
+                    </div><!--end of Control div-->
+                </div><!--end of leftTopHalf div-->
+
+                <div id="leftBottomHalf">
+
+
+                    <!-- /********************************************  *********************************************************
+                * This part of code is picked from website linked blow
+                * http://www.zztuku.com/JS/Tables/20121123_4272.html
+                *This part of code is for making a div drgable
+                         *****************************************************************************************************-->
+                    <div id="drag">
+                        <div class="title">
+                            <div>
+                                <button class="revert" type="button">Revert</button>
+                                <button onclick=" hideNoteDiv()" type="button">&#9472</button>
+
+
+                            </div>
+                        </div>
+                        <div class="resizeL"></div>
+                        <div class="resizeT"></div>
+                        <div class="resizeR"></div>
+                        <div class="resizeB"></div>
+                        <div class="resizeLT"></div>
+                        <div class="resizeTR"></div>
+                        <div class="resizeBR"></div>
+                        <div class="resizeLB"></div>
+                        <div id = "noteDiv">
+                            <textarea id = "noteDivTextArea">
+                            </textarea> 
+                            <div id="noteDivButtonArea">
+                                <ul>
+                                    <li><button class="defaultButton" style="width: 140px; margin-left: 7px;margin-top: 1px;" type="button">Save Notes</button></li>
+                                    <li><button class="defaultButton" style="width: 140px;margin-left: 7px;margin-top: 3px;" type="button">Daly Diary</button></li>
+                                    <li><button class="defaultButton" style="width: 140px;margin-left: 7px;margin-top: 3px;" type="button">Expand Notes...</button></li>
+                                </ul>  
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- /*****************************************************************************************************-->
+                </div><!--end of leftBottomHalf div-->
+            </div><!--end of leftHalf div-->
+
+            <div id ="rightHalf">
+
+                <div id="mapDrag">
+                    <div class ="mapTitleLable" id ="mapTitle">
+                        Weather Map Window
+                    </div>
+                    <div id="mapControl">
+                        <a href="/WeatherViewerLite-2/mapPage.html" target="_blank">
+                            <img id ="popOutImg" src="/WeatherViewerLite-2/imge/box_expand.png"/>
+                        </a>
+                        <select id="mapSourceSelector" class="dropDownListSelector"  onchange="updateVid()">
+                        </select>
+                    </div>
+                    <div class="mapResizeL"></div>
+                    <div class="mapResizeT"></div>
+                    <div class="mapResizeR"></div>
+                    <div class="mapResizeB"></div>
+                    <div class="mapResizeLT"></div>
+                    <div class="mapResizeTR"></div>
+                    <div class="mapResizeBR"></div>
+                    <div class="mapResizeLB"></div>
+                    <div id="m_map">
+                        <video id="map" oncontextmenu="return false;" src="">
+                            Hmmm, our browser, supports video, does not!
+                        </video>
+                    </div>          
+                </div><!--end of map drag-->
+
+                <div id="graphDrag">
+                    <div class="graphTitleLable" id="graphTitle">
+                        Weather Graph Window
+                    </div>
+                    <div id="graphControl">
+                        <select id="graphSourceSelector" class="dropDownListSelector"  onchange="updateVid()">
+                        </select>
+                        <a href="/WeatherViewerLite-2/graphPage.html" target="_blank">
+                            <img id ="popOutImg"  src="/WeatherViewerLite-2/imge/box_expand.png"/>
+                        </a>
+                    </div>
+                    <div class="graphResizeL"></div>
+                    <div class="graphResizeT"></div>
+                    <div class="graphResizeR"></div>
+                    <div class="graphResizeB"></div>
+                    <div class="graphResizeLT"></div>
+                    <div class="graphResizeTR"></div>
+                    <div class="graphResizeBR"></div>
+                    <div class="graphResizeLB"></div>
+                    <div id = "graph"> 
+                        <div class="movieSelector">
+
+                        </div>
+                    </div>
+                </div><!--end of graph drag-->
+
+            </div><!--end of rightHalf div-->
+
+        </div><!--end of wrapper-->
+
+        <!-- the Date Data is in dateTime.js > function updateDates()-->
+        <div id="pickDateDiv">
+
+            <div id="dateSelector">
+                <span class="dateLabel">Start Time</span>
+                <br>
+                <input id="date1" class="date1" type="text" value=""/>               
+            </div>      
+            <br>
+            <div class="videoButton" style="width: 170px; height: 30px;line-height: 25px;font-size: 15px;margin-left: 450px; " onclick="">Create BookMark</div>
+            <br>
+            <div class="videoButton" style="width: 170px; height: 30px;line-height: 25px;font-size: 15px;margin-left: 450px;margin-top: 40px " onclick="">find A BookMark</div>
+            <div class="videoButton" style="width: 170px; height: 30px;line-height: 25px;font-size: 15px;margin-left: 275px;margin-top: 250px " onclick="closeDatePickDiv()">Ok</div>
+        </div><!--end of pickDateDiv -->
+        <div id="pickDateDivMask" onClick="closeDatePickDiv()"></div>
+
+
+        <div id="menuFileOpen">
+            <p style="margin-left: 140px; margin-top: 30px;">Select file you want to open</p>
+            <input id="localVideoSelectInput" type="file" accept="video/*"/>
+            <div id="message">Please select a local video </div>      
+            <div type="hidden" id="videoNameSelected">this should be a hidden field once this is done</div> 
+        </div>
+        <script type="text/javascript" src="/WeatherViewerLite-2/javaScript/loadLocalFile.js"></script>
+        
+       <div id="menuFileSave">
+           Click to download
+            <a id="downloadButton" href="" download="">download me</a>
+        </div> 
+        
+        
+        
+       
+        <div id="menuMask" onClick="closeMenuMaskDiv()"></div>
+        <div id = "foot" style="display: none;">
+            <h1>Foot</h1>
+        </div><!--end of foot div-->
+
+
+
+        <!-- /*****************************************************************************************************
+        * This part of code is picked from website linked blow
+        * http://callmenick.com/post/slide-and-push-menus-with-css3-transitions
+        *This part of code is for the setting bar on the left
+        -->
+        <div id="o-wrapper" class="o-wrapper">
+        </div><!-- /main-wrapper -->
+
+        <nav id="c-menu--slide-left" class="c-menu c-menu--slide-left" >
+            <button class="c-menu__close">&larr; Close Menu</button>
+            <div id="menu">
+                <ul class="c-menu__items">
+                    <li class="c-menu__item"><a href="#" class="c-menu__link" onclick="Show('file')">File</a>
+                        <ul id="file">
+                            <li><div class = "menuItemDefaultStyle" onClick ="openMenuFileOpenDiv()">Open</div></li>
+                            <li><div class = "menuItemDefaultStyle" onClick ="openMenuFileSaveDiv()">Save</div></li>
+                            <li><div class = "menuItemDefaultStyle">Export</div></li>
+                            <li><div class = "menuItemDefaultStyle">Setting</div></li>
+                            <li><div class = "menuItemDefaultStyle">Print</div></li>
+                            <li><div class = "menuItemDefaultStyle">Exit</div></li>
+                        </ul>
+                    </li>
+                    <li class="c-menu__item"><a href="#" class="c-menu__link" onclick="Show('search')">Search</a>
+                        <ul id="search">
+                            <li><div class = "menuItemDefaultStyle">Observation Data</div></li>
+                            <li><div class = "menuItemDefaultStyle">Weather Station Data</div></li>
+                            <li><div class = "menuItemDefaultStyle">Browse Data Directing</div></li>
+                        </ul>
+                    </li>
+                    <li class="c-menu__item"><a href="#" class="c-menu__link" onclick="Show('bookmark')">Bookmarks/Events</a>
+                        <ul id="bookmark">
+                            <li><div class = "menuItemDefaultStyle">Open Bookmark/Event</div></li>
+                            <li><div class = "menuItemDefaultStyle">Search Bookmark/Event</div></li>
+                            <li><div class = "menuItemDefaultStyle">Create Bookmark/Event</div></li>
+                            <li><div class = "menuItemDefaultStyle">Manage Bookmark/Event</div></li>
+                            <li><div class = "menuItemDefaultStyle">Manage Bookmark/Event and Sub-Categorizes</div></li>
+                        </ul>
+                    </li>
+                    <li class="c-menu__item"><a href="#" class="c-menu__link" onclick="Show('lessons')">Lessons</a>
+                        <ul id="lessons">
+                            <li><div class = "menuItemDefaultStyle">Forecasting Lessons</div></li>
+                            <li><div class = "menuItemDefaultStyle">Forecasting Lessons</div></li>
+                        </ul>
+                    </li>
+                    <li class="c-menu__item"><a href="#" class="c-menu__link" onclick="Show('weblinks')">Web Links</a>
+                        <ul id="weblinks">
+                            <li><div class = "menuItemDefaultStyle">Statellite Links</div></li>
+                            <li><div class = "menuItemDefaultStyle">Other</div></li>
+                        </ul>
+                    </li>
+                    <li class="c-menu__item"><a href="#" class="c-menu__link" onclick="Show('weathercamera')">Weather Camera</a>
+                        <ul id="weathercamera">
+                            <li><div class = "menuItemDefaultStyle">Weather Camera Location/Map</div></li>
+                            <li><div class = "menuItemDefaultStyle">Save Weather Camera video</div></li>
+                        </ul>
+                    </li>
+                    <li class="c-menu__item"><a href="#" class="c-menu__link" onclick="Show('help')">Help</a>
+                        <ul id="help">
+                            <li><div class = "menuItemDefaultStyle">View Manual</div></li>
+                            <li><div class = "menuItemDefaultStyle">About</div></li>
+                            <li><div class = "menuItemDefaultStyle">Contact the Administrator</div></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav><!-- /c-menu slide-left -->
+        <div id="c-mask" class="c-mask"></div><!-- /c-mask -->
+
+        <!-- menus script //the reason this part of code is because if js run before DOM ready,#c-button--slide-left did not exist.  -->
+        <script type="text/javascript" src="/WeatherViewerLite-2/javaScript/menu.js"></script>
+        <!-- /*****************************************************************************************************-->
+
+    </body> 
+
+</html>
